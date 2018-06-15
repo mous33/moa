@@ -1,0 +1,30 @@
+<script type="text/ng-template" id="message.html">
+<div class="modal-header" ng-show="type == 'error'" style="background-color: #d2322d;color:#ffffff">
+	<h4 class="modal-title">
+		<span  class="glyphicon glyphicon-warning-sign" style="font-size:25px">&nbsp;エラー</span>
+	</h4>
+</div>
+<div class="modal-header" ng-show="type == 'info'" style="background-color: #5bc0de;color:#ffffff">
+	<h4 class="modal-title">
+		<span ng-show="type == 'info'" class="glyphicon glyphicon-info-sign" style="font-size:25px">&nbsp;情報</span>
+	</h4>
+</div>
+<div class="modal-header" ng-show="type == 'confirm'" style="background-color: #22aa77;color:#ffffff">
+	<h4 class="modal-title">
+		<span ng-show="type == 'confirm'" class="glyphicon glyphicon-question-sign" style="font-size:25px">&nbsp;確認</span>
+	</h4>
+</div>
+<div class="modal-body">
+	<div class="text-center" style="font-size:14px;">
+		{{ msg }}
+	</div>
+</div>
+<div class="modal-footer">
+	<div class="text-center">
+		<button ng-show="type == 'error'" class="btn btn-danger" type="button" ng-click="ok()">閉じる</button>
+		<button ng-show="type == 'info'" class="btn btn-info" type="button" ng-click="ok()">閉じる</button>
+		<button ng-show="type == 'confirm'" class="btn btn-success" type="button" ng-click="ok()">確定</button>
+		<button ng-show="type == 'confirm'" class="btn btn-default" type="button" ng-click="cancel()">取消</button>
+	</div>
+</div>
+</script>

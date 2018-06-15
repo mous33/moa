@@ -1,0 +1,11 @@
+<div class="container" ui-view="message"></div>
+<div class="container" ng-controller="homeCtrl">
+	<div class="row clearfix">
+		<div class="col-md-3">
+			<img alt="140x140" src="img/logo.jpg" />
+		</div>
+		<div class="col-md-offset-6 col-md-3">{{loginUser.message}}</div>
+	</div>
+</div>
+<div class="container" ui-view="topMenu"></div>
+<div class="container" ui-view="content"></div>

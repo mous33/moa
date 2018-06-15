@@ -1,0 +1,54 @@
+<div class="container" ng-controller="ad01Ctrl">
+	<div class="row clearfix">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div>
+						<button type="button" class="btn btn-default btn-success"
+							data-toggle="modal" data-target="#addUserDialog">
+							<span class="glyphicon glyphicon-plus">新規</span>
+						</button>
+					</div>
+					<hr />
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">ユーザ一覧</h3>
+						</div>
+						<div class="panel-body">
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th>ユーザID</th>
+										<th>ユーザ名</th>
+										<th>グループ</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="user in users">
+										<td>{{user.userId}}</td>
+										<td>{{user.userName}}</td>
+										<td>{{user.userGroupName}}</td>
+										<td>
+											<button type="button" class="btn btn-danger"
+												ng-show="{{user.validFlag == 1}}" data-toggle="modal"
+												data-target="#addUserDialog">
+												<span class="glyphicon glyphicon-minus-sign">無効</span>
+											</button>
+											<button type="button" class="btn btn-success"
+												ng-show="{{user.validFlag == 0}}" data-toggle="modal"
+												data-target="#addUserDialog">
+												<span class="glyphicon glyphicon-ok-sign">有効</span>
+											</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container" ui-view="ad0101"></div>
+</div>
